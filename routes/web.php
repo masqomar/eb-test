@@ -13,14 +13,9 @@ use Carbon\Carbon;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('testing-wa', '\App\Http\Controllers\TestingController@testingWa');
-Route::get('testing', '\App\Http\Controllers\TestingController@index');
-Route::get('json-testing', '\App\Http\Controllers\TestingController@jsonRelation');
-Route::get('local-storage', '\App\Http\Controllers\TestingController@localStorage');
-Route::get('on-progress', '\App\Http\Controllers\TestingController@onprogress');
 
 Route::get('/', function () {
-    return redirect('/id/index.php');
+    return redirect('/login');
 })->name('home');
 
 Route::post('upload', '\App\Http\Controllers\Admin\DashboardController@upload')->name('upload');
@@ -136,7 +131,3 @@ Route::get('user/{id}/activation', '\App\Http\Controllers\ActivationController@a
 Route::get('user/{id}/activation/actived', '\App\Http\Controllers\ActivationController@actived');
 Route::get('user/forgot-password', '\App\Http\Controllers\ActivationController@forgotPassword');
 Route::post('user/forgot-password', '\App\Http\Controllers\ActivationController@storeForgotPassword');
-Route::get('/symlink', function() {
-    Artisan::call('storage:link');
-    return "Symlink berhasil dibuat";
-});
