@@ -32,7 +32,7 @@ class TransactionRepository extends BaseRepository implements TransactionInterfa
     {
         $transactions = $this->model->query();
         if(isset($params->search) && !empty($params->search)) $transactions->where('code', 'like', '%' . $params->search . '%');
-        $transactions = $transactions->with(['user', 'exam', 'exam.category'])->orderBy('created_at', 'ASC')->paginate($limit);
+        $transactions = $transactions->with(['user', 'exam', 'exam.category', 'program', 'program.program_type'])->orderBy('created_at', 'ASC')->paginate($limit);
         return $transactions;
     }
 
