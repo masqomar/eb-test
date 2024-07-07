@@ -51,7 +51,7 @@ class TransactionRepository extends BaseRepository implements TransactionInterfa
     {
         $transactions = $this->model;
         if(isset($params->search) && !empty($params->search)) $transactions->where('code', 'like', '%' . $params->search . '%');
-        $transactions = $transactions->with(['user', 'exam.category'])->where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate($limit);
+        $transactions = $transactions->with(['user', 'exam.category', 'program', 'program.program_type'])->where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate($limit);
         return $transactions;
     }
 
@@ -66,7 +66,7 @@ class TransactionRepository extends BaseRepository implements TransactionInterfa
     public function getSummaryTransactionByUser($limit = 5)
     {
         $transactions = $this->model;
-        $transactions = $transactions->with(['exam', 'exam.category'])->where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->limit($limit)->get();
+        $transactions = $transactions->with(['exam', 'exam.category', 'program', 'program.program_type'])->where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->limit($limit)->get();
         return $transactions;
     }
 
