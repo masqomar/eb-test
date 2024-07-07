@@ -133,10 +133,8 @@
                                     <td>{{ ++index }}</td>
                                     <td>{{ transactionSummary.code }}</td>
                                     <td>{{ transactionSummary.created_at }}</td>
-                                    <td v-if="transactionSummary.exam === true">{{ transactionSummary.exam.category.name }}</td>
-                                    <td v-else>{{ transactionSummary.program.program_type.name }}</td>
-                                    <td v-if="transactionSummary.exam === true">{{ transactionSummary.exam.title }}</td>
-                                    <td v-else>{{ transactionSummary.program.name }}</td>
+                                    <td>{{ transactionSummary.exam.category.name }}</td>
+                                    <td>{{ transactionSummary.exam.title }}</td>
                                     <td>
                                         <span class="badge bg-warning" v-if="transactionSummary.transaction_status == 'pending'">Pending</span>
                                         <span class="badge bg-primary" v-if="transactionSummary.transaction_status == 'paid'">Lunas</span>

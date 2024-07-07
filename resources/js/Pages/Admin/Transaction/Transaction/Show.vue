@@ -47,27 +47,32 @@
                                     <tr>
                                         <td>Provinsi</td>
                                         <td>:</td>
-                                        <td>{{ transaction.user.student.province.name }}</td>
+                                        <td v-if="transaction.user.student.province_id == null">-</td>
+                                        <td v-else>{{ transaction.user.student.province.name }}</td>
                                     </tr>
                                     <tr>
                                         <td>Kota/Kab</td>
                                         <td>:</td>
-                                        <td>{{ transaction.user.student.city.name }}</td>
+                                        <td v-if="transaction.user.student.city_id == null">-</td>
+                                        <td v-else>{{ transaction.user.student.city.name }}</td>
                                     </tr>
                                     <tr>
                                         <td>Kecamatan</td>
                                         <td>:</td>
-                                        <td>{{ transaction.user.student.district.name }}</td>
+                                        <td v-if="transaction.user.student.district_id == null">-</td>
+                                        <td v-else>{{ transaction.user.student.district.name }}</td>
                                     </tr>
                                     <tr>
                                         <td>Desa/Kelurahan</td>
                                         <td>:</td>
-                                        <td>{{ transaction.user.student.village.name }}</td>
+                                        <td v-if="transaction.user.student.village_id == null">-</td>
+                                        <td v-else>{{ transaction.user.student.village.name }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Desa/Kelurahan</td>
+                                        <td>Dusun/Jalan</td>
                                         <td>:</td>
-                                        <td>{{ transaction.user.student.address }}</td>
+                                        <td v-if="transaction.user.student.address == null">-</td>
+                                        <td v-else>{{ transaction.user.student.address }}</td>
                                     </tr>
                                     <tr>
                                         <td>Nomor Telepon (Whatsapp)</td>
