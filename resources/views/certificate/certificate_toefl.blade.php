@@ -86,7 +86,7 @@
         <p style="margin-left: 120px; margin-top: 30px"><strong>Under the auspices of: <br />English Booster</strong>
         <br />Jl. Asparaga no 82 Pare Kediri 64212
             <br />Test Date : {{ $grade->end_time }}
-            <br />At : {{ env('APP_URL') }}
+            <br />At : https://englishboosterofficial.com
         </p>
 
     </div>
