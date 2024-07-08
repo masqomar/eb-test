@@ -48,7 +48,14 @@
 
 <body>
     <div style="position:fixed;left: 0px; right: 0px; bottom: 0px; text-align: center;z-index: -1000;">
-        <img src="{{ env('APP_URL') }}/assets/certificate/toefl.jpg" style="width: 100%;height: 100%;">
+    @foreach($grade->gradeDetail as $gradeDetail)
+    @if ($gradeDetail->grade <= 542 )
+        <img src="{{ env('APP_URL') }}/assets/certificate/silver.jpg" style="width: 100%;height: 100%;">
+        @elseif ($gradeDetail->grade >= 543 || $gradeDetail->grade <=626)
+        <img src="{{ env('APP_URL') }}/assets/certificate/bronze.jpg" style="width: 100%;height: 100%;">
+        @else
+        <img src="{{ env('APP_URL') }}/assets/certificate/gold.jpg" style="width: 100%;height: 100%;">
+        @endforeach
     </div>
     <div class="inbackground">
         <h2><br />
@@ -72,7 +79,9 @@
                 <th><bold>{{ $grade->grade }}</bold></th>
             </tr>
         </table>
-        <p style="margin-left: 120px; margin-top: 45px">Date : {{ $grade->end_time }}
+        <p style="margin-left: 120px; margin-top: 30px"><strong>Under the auspices of: <br />English Booster</strong>
+        <br />Jl. Asparaga no 82 Pare Kediri 64212
+            <br />Test Date : {{ $grade->end_time }}
             <br />At : {{ env('APP_URL') }}
         </p>
 

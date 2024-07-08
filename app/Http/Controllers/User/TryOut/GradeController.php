@@ -51,6 +51,7 @@ class GradeController extends Controller
         $grade = $this->gradeService->find($id);
         if(!$grade) return abort('404', 'uppss....');
         // return $grade->gradeDetail;
+        // return json_encode($grade);
         if($grade->category->name === "TOEFL"){
             $pdf = Pdf::loadView('certificate.certificate_toefl', ['grade' => $grade])->setPaper('a4', 'landscape');
             return $pdf->stream();
