@@ -142,8 +142,8 @@
                                         <span class="badge bg-primary" v-else>{{ ++index + (rankingExams.current_page - 1) * rankingExams.per_page }}</span>
                                     </td>
                                     <td>{{ rankingExam.user.name }}</td>
-                                    <td>{{ rankingExam.user.student.province.name }}</td>
-                                    <td>{{ rankingExam.user.student.city.name }}</td>
+                                    <td>{{ rankingExam.user.student.province_id == null ? '-' : rankingExam.user.student.province.name }}</td>
+                                    <td>{{ rankingExam.user.student.city_id == null ? '-' : rankingExam.user.student.city.name }}</td>
                                     <th>{{ rankingExam.grade_old }}</th>
                                 </tr>
                             </tbody>

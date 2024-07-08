@@ -143,8 +143,8 @@
                                     <td>
                                         {{ rankingExam.user.name }}
                                     </td>
-                                    <td>{{ rankingExam.user.student.province.name }}</td>
-                                    <td>{{ rankingExam.user.student.city.name }}</td>
+                                    <td>{{ rankingExam.user.student.province_id == null ? '-' : rankingExam.user.student.province.name }}</td>
+                                    <td>{{ rankingExam.user.student.city_id == null ? '-' : rankingExam.user.student.city.name }}</td>
                                     <th>
                                         <a href="#" @click.prevent="unblocked(rankingExam.id)"><span class="badge bg-danger" v-if="rankingExam.is_blocked == 1">Di Blokir, Klik Untuk Membuka</span></a>
                                         <span class="badge bg-primary" v-if="rankingExam.is_blocked == 0">Selesai Mengerjakan</span>

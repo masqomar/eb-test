@@ -69,22 +69,22 @@
                                 <tr>
                                     <th>Provinsi</th>
                                     <td>:</td>
-                                    <td>{{ student.province.name }}</td>
+                                    <td>{{ student.province_id == null ? '-' : student.province.name }}</td>
                                 </tr>
                                 <tr>
                                     <th>Kota/Kab</th>
                                     <td>:</td>
-                                    <td>{{ student.city.name }}</td>
+                                    <td>{{ student.city_id == null ? '-' : student.city.name }}</td>
                                 </tr>
                                 <tr>
                                     <th>Kecamatan</th>
                                     <td>:</td>
-                                    <td>{{ student.district.name }}</td>
+                                    <td>{{ student.district_id == null ? '-' : student.district.name }}</td>
                                 </tr>
                                 <tr>
                                     <th>Desa/Kel</th>
                                     <td>:</td>
-                                    <td>{{ student.village.name }}</td>
+                                    <td>{{ student.village_id == null ? '-' : student.village.name }}</td>
                                 </tr>
                                 <tr>
                                     <th>Status Member</th>
