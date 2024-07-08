@@ -27,22 +27,25 @@
 
     .inbackground {
         top:25%;
-        border:1px solid yellow;
+        border:1px solid navy;
         height:700px;
     }
 
     .certificate_name {
         color: #332B28;
         font-family: "Arial";
-        font-size: 3rem;
-        margin-top:21%;
+        font-size: 2.5rem;
+        margin-top:26%;
+        line-height: 1.1;
     }
-
-    .test {
-        position: relative;
+    
+    .archived_name {
+        line-height: 1.0;
     }
+    
     td{
-        font-size: 20px;
+        font-size: 15px;
+        line-height: 0.8;
     }
 </style>
 
@@ -65,7 +68,7 @@
             </p>
         </h2>
         <h3 align="center" align="center" style="margin-top:-40px;">Achieved the following scores on the</h3>
-        <h2 align="center" align="center" style="margin-top:-10px"><i>{{ $grade->exam->title}}</i></h2>
+        <h2 align="center" class="archived_name" style="margin-top:-10px"><i>{{ $grade->exam->title}}</i></h2>
         <table align="center">
             @foreach($grade->gradeDetail as $gradeDetail)
                 <tr>
