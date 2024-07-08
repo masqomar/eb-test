@@ -50,11 +50,11 @@
     <div style="position:fixed;left: 0px; right: 0px; bottom: 0px; text-align: center;z-index: -1000;">
         @foreach($grade->gradeDetail as $gradeDetail)
         @if ($gradeDetail->grade <= 542 )
-        <img src="{{ env('APP_URL') }}/assets/certificate/silver.jpg" style="width: 100%;height: 100%;">
+        <img src="{{ env('APP_URL') }}/assets/certificate/toefl_silver.jpg" style="width: 100%;height: 100%;">
         @elseif ($gradeDetail->grade >= 543 || $gradeDetail->grade <=626)
-        <img src="{{ env('APP_URL') }}/assets/certificate/bronze.jpg" style="width: 100%;height: 100%;">
+        <img src="{{ env('APP_URL') }}/assets/certificate/toefl_bronze.jpg" style="width: 100%;height: 100%;">
         @else
-        <img src="{{ env('APP_URL') }}/assets/certificate/gold.jpg" style="width: 100%;height: 100%;">
+        <img src="{{ env('APP_URL') }}/assets/certificate/toefl_gold.jpg" style="width: 100%;height: 100%;">
         @endif
         @endforeach
     </div>
